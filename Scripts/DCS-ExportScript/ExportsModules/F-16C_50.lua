@@ -54,7 +54,7 @@ ExportScript.ConfigArguments =
 	[367] = "%1d", --CH Expendable Category Switch, ON/OFF
 	[368] = "%1d", --FL Expendable Category Switch, ON/OFF
 	[377] = "%.1f", --PROGRAM Knob, BIT/1/2/3/4
-	[378] = "%.1f" --MODE Knob, OFF/STBY/MAN/SEMI/AUTO/BYP
+	[378] = "%.1f", --MODE Knob, OFF/STBY/MAN/SEMI/AUTO/BYP
 	-- RWR
 	--[[
 	elements["PTR-CMSC-LVR-BRT-140"]	= default_axis_limited(_("RWR Intensity Knob - Rotate to adjust brightness"),	devices.RWR, rwr_commands.IntKnob,		140, 0, 0.1, NOT_UPDATABLE, NOT_RELATIVE, {0, 0.8})
@@ -73,6 +73,7 @@ ExportScript.ConfigArguments =
 	elements["PTR-TWAP-BTN-PWR-401"].class_vr = {class_type.BTN_FIX}
 	elements["PTR-TWAP-BTN-PWR-401"].side     = {{BOX_SIDE_Y_bottom}}
 	]]--
+	[401] = "%1d" --RWR Indicator Control POWER Button
 }
 
 -----------------------------
