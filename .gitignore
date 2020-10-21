@@ -41,3 +41,6 @@ luac.out
 
 # swap file
 *.*~
+Scripts/DCS-ExportScript/.idea/DCS-ExportScript.iml
+Scripts/DCS-ExportScript/.idea/misc.xml
+Scripts/DCS-ExportScript/.idea/modules.xml

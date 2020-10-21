@@ -560,6 +560,10 @@ function ExportScript.Tools.FlushData()
 			local try = ExportScript.socket.newtry(function() ExportScript.UDPsender:close() ExportScript.Tools.createUDPSender() ExportScript.Tools.ResetChangeValues() end)
 			try(ExportScript.UDPsender:sendto(lPacket, ExportScript.Config.IkarusHost, ExportScript.Config.IkarusPort))
 
+            if ExportScript.Config.StreamdeckExport then
+                try(ExportScript.UDPsender:sendto(lPacket, ExportScript.Config.StreamdeckHost, ExportScript.Config.StreamdeckPort))
+            end
+
 			if ExportScript.Config.SocketDebug then
 				ExportScript.Tools.WriteToLog("FlushData: send to host: "..ExportScript.Config.IkarusHost..", Port: "..ExportScript.Config.IkarusPort..", Data: "..lPacket)
 			end
