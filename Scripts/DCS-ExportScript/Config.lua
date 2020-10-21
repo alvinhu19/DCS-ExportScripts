@@ -19,6 +19,11 @@ ExportScript.Config.StreamdeckExport  = true         -- false for not use
 ExportScript.Config.StreamdeckHost    = "127.0.0.1"  -- IP for DCS Interface
 ExportScript.Config.StreamdeckPort    = 1725         -- Port DCS Interface (1725)
 
+-- Added for Streamdeck DCS Interface (IkarusExport must also be true)
+ExportScript.Config.JetwayExport  = true         -- false for not use
+ExportScript.Config.JetwayHost    = "127.0.0.1"  -- IP for DCS Interface
+ExportScript.Config.JetwayPort    = 1726         -- Port Jetway DCS Interface (1726)
+
 -- D.A.C. (DCS Arcaze Connector)
 ExportScript.Config.DACExport        = false        -- true for use
 ExportScript.Config.DAC              = {}

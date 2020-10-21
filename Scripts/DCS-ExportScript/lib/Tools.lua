@@ -564,6 +564,10 @@ function ExportScript.Tools.FlushData()
                 try(ExportScript.UDPsender:sendto(lPacket, ExportScript.Config.StreamdeckHost, ExportScript.Config.StreamdeckPort))
             end
 
+            if ExportScript.Config.JetwayExport then
+                try(ExportScript.UDPsender:sendto(lPacket, ExportScript.Config.JetwayHost, ExportScript.Config.JetwayPort))
+            end
+
 			if ExportScript.Config.SocketDebug then
 				ExportScript.Tools.WriteToLog("FlushData: send to host: "..ExportScript.Config.IkarusHost..", Port: "..ExportScript.Config.IkarusPort..", Data: "..lPacket)
 			end
