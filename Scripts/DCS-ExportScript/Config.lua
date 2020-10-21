@@ -19,9 +19,9 @@ ExportScript.Config.StreamdeckExport  = true         -- false for not use
 ExportScript.Config.StreamdeckHost    = "127.0.0.1"  -- IP for DCS Interface
 ExportScript.Config.StreamdeckPort    = 1725         -- Port DCS Interface (1725)
 
--- Added for Streamdeck DCS Interface (IkarusExport must also be true)
+-- Added for Jetway DCS Interface (IkarusExport must also be true)
 ExportScript.Config.JetwayExport  = true         -- false for not use
-ExportScript.Config.JetwayHost    = "127.0.0.1"  -- IP for DCS Interface
+ExportScript.Config.JetwayHost    = "192.168.31.7"  -- IP for DCS Interface
 ExportScript.Config.JetwayPort    = 1726         -- Port Jetway DCS Interface (1726)
 
 -- D.A.C. (DCS Arcaze Connector)
@@ -44,7 +44,7 @@ ExportScript.Config.ListenerPort     = 26027        -- Listener Port for D.A.C.
 
 -- Other
 ExportScript.Config.ExportInterval         = 0.05	-- export evry 0.05 secounds
-ExportScript.Config.ExportLowTickInterval  = 0.5	-- export evry 0.5 secounds
+ExportScript.Config.ExportLowTickInterval  = 0.2	-- export evry 0.5 secounds
 ExportScript.Config.LogPath                = lfs.writedir()..[[Logs\Export.log]]
 ExportScript.Config.ExportModulePath       = lfs.writedir()..[[Scripts\DCS-ExportScript\ExportsModules\]]
 ExportScript.Config.Debug                  = false

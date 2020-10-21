@@ -657,6 +657,32 @@ function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)
 	
 	local lUHF2Radio = GetDevice(39)
 	ExportScript.Tools.SendData(2031, ExportScript.Tools.DisplayFormat(ExportScript.Tools.RoundFreqeuncy((lUHF2Radio:get_frequency()/1000000), "7.3", false, 0.005)), 7)
+
+	-- UFC Export for JW Display
+	local lUFCDisplays = ExportScript.Tools.getListIndicatorValue(6)
+	if ExportScript.Config.Debug then
+		ExportScript.Tools.WriteToLog('UFC: '..ExportScript.Tools.dump(lUFCDisplays))
+	end
+
+	if lUFCDisplays ~= nil and lUFCDisplays.UFC_MainDummy ~= nil then
+		ExportScript.Tools.SendData("UFCOD1", ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_OptionDisplay1, 4))
+		ExportScript.Tools.SendData("UFCOD2", ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_OptionDisplay2, 4))
+		ExportScript.Tools.SendData("UFCOD3", ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_OptionDisplay3, 4))
+		ExportScript.Tools.SendData("UFCOD4", ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_OptionDisplay4, 4))
+		ExportScript.Tools.SendData("UFCOD5", ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_OptionDisplay5, 4))
+		ExportScript.Tools.SendData("UFCOC1", ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_OptionCueing1:gsub(":", "!"), 1))
+		ExportScript.Tools.SendData("UFCOC2", ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_OptionCueing2:gsub(":", "!"), 1))
+		ExportScript.Tools.SendData("UFCOC3", ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_OptionCueing3:gsub(":", "!"), 1))
+		ExportScript.Tools.SendData("UFCOC4", ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_OptionCueing4:gsub(":", "!"), 1))
+		ExportScript.Tools.SendData("UFCOC5", ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_OptionCueing5:gsub(":", "!"), 1))
+		ExportScript.Tools.SendData("UFCSPSD1", ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_ScratchPadString1Display, 2))
+		ExportScript.Tools.SendData("UFCSPSD2", ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_ScratchPadString2Display, 2))
+		ExportScript.Tools.SendData("UFCSPND", ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_ScratchPadNumberDisplay, 7))
+		ExportScript.Tools.SendData("UFCC1D", ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_Comm1Display, 2))
+		ExportScript.Tools.SendData("UFCC2D", ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_Comm2Display, 2))
+	end
+
+
 end
 
 function ExportScript.ProcessDACConfigLowImportance(mainPanelDevice)
