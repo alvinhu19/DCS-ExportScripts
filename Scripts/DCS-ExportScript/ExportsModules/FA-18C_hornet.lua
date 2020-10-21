@@ -134,7 +134,7 @@ ExportScript.ConfigEveryFrameArguments =
 	-- Arresting Hook Control Handle
 	[294] = "%1d",   -- CPT_LTS_HOOK
 	-- Landing Gear 
-	--[] = "%1d",   -- CPT_LTS_LDG_GEAR_HANDLE
+	[227] = "%1d",   -- CPT_LTS_LDG_GEAR_HANDLE
 	-- APU Control Panel
 	[376] = "%1d",   -- CPT_LTS_APU_READY
 	-- ECM Control Panel Assy
@@ -165,18 +165,15 @@ ExportScript.ConfigEveryFrameArguments =
 	[468] = "%1d",   -- IFEI
 	[469] = "%1d",   -- IFEI_buttons
 	-- RWR
-	[276] = "%1d",   -- Lower
-	--[273] = "%1d",   -- Limit
+	[276] = "%.1f",   -- Lower
 	[273] = "%.1f",   -- Limit
-	[274] = "%1d",   -- Display
+	[274] = "%.1f",   -- Display
 	--[270] = "%1d",   -- SpecialEn
-	[271] = "%1d",   -- Special
-	--[267] = "%1d",   -- Enable
+	[271] = "%.1f",   -- Special
 	[267] = "%.1f",   -- Enable
-	[268] = "%1d",   -- Offset
-	--[264] = "%1d",   -- Fail
+	[268] = "%.1f",   -- Offset
 	[264] = "%.1f",   -- Fail
-	[265] = "%1d",   -- Bit
+	[265] = "%.1f",   -- Bit
 	[520] = "%.1f",   -- RwrLightsBrightness
 	-- CMDS
 	[516] = "%1d",   -- ecmJett  
@@ -196,8 +193,10 @@ ExportScript.ConfigArguments =
 	[346] = "%1d",   -- T/O TRIM Button
 	[349] = "%1d",   -- FCS RESET Button
 	[347] = "%1d",   -- GAIN Switch, NORM/ORIDE
+	[348] = "%1d",   -- GAIN Cover, 
 	[234] = "%1d",   -- FLAP Switch, AUTO/HALF/FULL {-1.0,0.0,1.0}
 	[138] = "%1d",   -- Spin Recovery Switch, RCVY/NORM
+	[139] = "%1d",   -- Spin Recovery Switch, Cover
 	[470] = "%1d",   -- FCS BIT Switch
 	[295] = "%1d",   -- Wing Fold Control Handle, (RMB)CW/(LMB)CCW
 	[296] = "%1d",   -- Wing Fold Control Handle, (MW)PULL/STOW
@@ -301,8 +300,7 @@ ExportScript.ConfigArguments =
 	[157] = "%1d",   -- Station Jettison Select Button, LEFT OUT
 	[159] = "%1d",   -- Station Jettison Select Button, RIGHT IN
 	[161] = "%1d",   -- Station Jettison Select Button, RIGHT OUT
-	[235] = "%1d",   -- Selective Jettison Pushbutton
-	--[236] = "%1d",   -- Selective Jettison Knob, L FUS MSL/SAFE/R FUS MSL/ RACK/LCHR /STORES {0.0,0.1,0.2,0.3,0.4}
+	[235] = "%.1f",   -- Selective Jettison Pushbutton
 	[236] = "%.1f",   -- Selective Jettison Knob, L FUS MSL/SAFE/R FUS MSL/ RACK/LCHR /STORES {0.0,0.1,0.2,0.3,0.4}
 	[135] = "%.1f",   -- IR Cooling Switch, ORIDE/NORM/OFF {0.0,0.1,0.2}
 	-- Fire Systems
@@ -314,7 +312,6 @@ ExportScript.ConfigArguments =
 	[28] = "%1d",   -- Right Engine/AMAD Fire Warning/Extinguisher Light - (RMB) cover control
 	-- Multipurpose Display Group -----------
     -- Head-Up Display
-	--[140] = "%1d",   -- HUD Symbology Reject Switch, NORM/REJ 1/REJ 2 {0.0,0.1,0.2}
 	[140] = "%.1f",   -- HUD Symbology Reject Switch, NORM/REJ 1/REJ 2 {0.0,0.1,0.2}
 	[141] = "%.2f",   -- HUD Symbology Brightness Control Knob {0.0,1.0} in 0.1 Steps
 	[142] = "%1d",   -- HUD Symbology Brightness Selector Knob, DAY/NIGHT
@@ -325,7 +322,6 @@ ExportScript.ConfigArguments =
 	[147] = "%1d",   -- HUD Altitude Switch, BARO/RDR
 	[148] = "%1d",   -- HUD Attitude Selector Switch, INS/AUTO/STBY {-1.0,0.0,1.0}
 	-- Left MDI
-	--[51] = "%1d",   -- Left MDI Brightness Selector Knob, OFF/NIGHT/DAY {0.0,0.1,0.2}
 	[51] = "%.1f",   -- Left MDI Brightness Selector Knob, OFF/NIGHT/DAY {0.0,0.1,0.2}
 	[52] = "%.2f",   -- Left MDI Brightness Control Knob {0.0,1.0} in 0.1 Steps
 	[53] = "%.2f",   -- Left MDI Contrast Control Knob {0.0,1.0} in 0.1 Steps
@@ -502,6 +498,7 @@ ExportScript.ConfigArguments =
 	-- Targeting Pod, FLIR
 	[439] = "%.1f",    -- FLIR Switch, ON/STBY/OFF {0.0,0.5,1.0}
 	[441] = "%.1f",    -- LTD/R Switch, ARM/SAFE/AFT {0.0,0.5,1.0}
+
 }
 
 -----------------------------
