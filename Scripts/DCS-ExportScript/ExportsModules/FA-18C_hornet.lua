@@ -659,6 +659,12 @@ function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)
 	ExportScript.Tools.SendData(2031, ExportScript.Tools.DisplayFormat(ExportScript.Tools.RoundFreqeuncy((lUHF2Radio:get_frequency()/1000000), "7.3", false, 0.005)), 7)
 
 	-- UFC Export for JW Display
+
+	lMyInfo = LoGetSelfData()
+	if  lMyInfo ~= nil then
+		ExportScript.Tools.SendData("GENNAME", string.format("%s", lMyInfo.Name .. ":DUMMY=".. tostring(math.random())) )
+	end
+
 	local lUFCDisplays = ExportScript.Tools.getListIndicatorValue(6)
 	if ExportScript.Config.Debug then
 		ExportScript.Tools.WriteToLog('UFC: '..ExportScript.Tools.dump(lUFCDisplays))
