@@ -204,11 +204,11 @@ ExportScript.ConfigArguments =
 [796]  = "%1d",   --PTR-STICK-HIDE-796, Hide Stick toggle, Hide Stick toggle, , , (1, 0, 1)
    -- CPTLIGHTS_SYSTEM(12)
 [691]  = "%1d",   --PTR-RLGT-TMB-MALIND-691, MAL & IND LTS Switch, MAL & IND LTS Switch, ,  BRT/Center/DIM, (-1, -1, 0)
-[685]  = "%1d",   --PTR-RLGT-LVR-PRICNS-685, PRIMARY CONSOLES BRT Knob, PRIMARY CONSOLES BRT Knob, , , (0, 0, 1)
-[686]  = "%1d",   --PTR-RLGT-LVR-PRIPNL-686, PRIMARY INST PNL BRT Knob, PRIMARY INST PNL BRT Knob, , , (0, 0, 1)
-[687]  = "%1d",   --PTR-RLGT-LVR-PRIDATA-687, PRIMARY DATA ENTRY DISPLAY BRT Knob, PRIMARY DATA ENTRY DISPLAY BRT Knob, , , (0, 0, 1)
-[688]  = "%1d",   --PTR-RLGT-LVR-FLDCNS-688, FLOOD CONSOLES BRT Knob, FLOOD CONSOLES BRT Knob, , , (0, 0, 1)
-[690]  = "%1d",   --PTR-RLGT-LVR-FLDPNL-690, FLOOD INST PNL BRT Knob, FLOOD INST PNL BRT Knob, , , (0, 0, 1)
+[685]  = "%.2f",   --PTR-RLGT-LVR-PRICNS-685, PRIMARY CONSOLES BRT Knob, PRIMARY CONSOLES BRT Knob, , , (0, 0, 1)
+[686]  = "%.2f",   --PTR-RLGT-LVR-PRIPNL-686, PRIMARY INST PNL BRT Knob, PRIMARY INST PNL BRT Knob, , , (0, 0, 1)
+[687]  = "%.2f",   --PTR-RLGT-LVR-PRIDATA-687, PRIMARY DATA ENTRY DISPLAY BRT Knob, PRIMARY DATA ENTRY DISPLAY BRT Knob, , , (0, 0, 1)
+[688]  = "%.2f",   --PTR-RLGT-LVR-FLDCNS-688, FLOOD CONSOLES BRT Knob, FLOOD CONSOLES BRT Knob, , , (0, 0, 1)
+[690]  = "%.2f",   --PTR-RLGT-LVR-FLDPNL-690, FLOOD INST PNL BRT Knob, FLOOD INST PNL BRT Knob, , , (0, 0, 1)
 [794]  = "%1d",   --PTR-AOA-LVL-794, AOA Indexer Dimming Lever, AOA Indexer Dimming Lever, , , (0, 0, 1)
 [795]  = "%1d",   --PTR-AR-LVL-795, AR Status Indicator Dimming Lever, AR Status Indicator Dimming Lever, , , (0, 0, 1)
 [116]  = "%1d",   --PTR-CPBC-BTN-MCAUT-116, Master Caution Button - Push to reset, Master Caution Button - Push to reset, , , (1, 0, 1)
@@ -261,8 +261,8 @@ ExportScript.ConfigArguments =
 [533]  = "%1d",   --PTR-EXTLGT-TMB-WNGTAIL-533, WING/TAIL Switch, WING/TAIL Switch, ,  BRT/OFF/DIM, (-1, -1, 1)
 [534]  = "%1d",   --PTR-EXTLGT-TMB-FUS-534, FUSELAGE Switch, FUSELAGE Switch, ,  BRT/OFF/DIM, (-1, -1, 1)
 [360]  = "%1d",   --PTR-LGCP-TMB-LIGHTS-360, LANDING TAXI LIGHTS Switch, LANDING TAXI LIGHTS Switch, ,  LANDING/OFF/TAXI, (-1, -1, 1)
-[535]  = "%1d",   --PTR-EXTLGT-LVR-FORM-535, FORM Knob, FORM Knob, , , (0, 0, 1)
-[537]  = "%1d",   --PTR-EXTLGT-LVR-AREF-537, AERIAL REFUELING Knob, AERIAL REFUELING Knob, , , (0, 0, 1)
+[535]  = "%.1f",   --PTR-EXTLGT-LVR-FORM-535, FORM Knob, FORM Knob, , , (0, 0, 1)
+[537]  = "%.1f",   --PTR-EXTLGT-LVR-AREF-537, AERIAL REFUELING Knob, AERIAL REFUELING Knob, , , (0, 0, 1)
 [532]  = "%1d",   --PTR-EXTLGT-TMB-FLSH-532, FLASH STEADY Switch, FLASH STEADY Switch, ,  FLASH/STEADY, (1, 0, 1)
 [533]  = "%1d",   --PTR-EXTLGT-TMB-WNGTAIL-533, WING/TAIL Switch, WING/TAIL Switch, ,  BRT/OFF/DIM, (1, -1, 1)
 [534]  = "%1d",   --PTR-EXTLGT-TMB-FUS-534, FUSELAGE Switch, FUSELAGE Switch, ,  BRT/OFF/DIM, (1, -1, 1)
@@ -287,8 +287,6 @@ ExportScript.ConfigArguments =
 [555]  = "%1d",   --PTR-FUELCP-TMB-REFUEL-555, AIR REFUEL Switch, AIR REFUEL Switch, ,  OPEN/CLOSE, (1, 0, 1)
 [556]  = "%.1f",   --PTR-FUELCP-TMB-ENGFEED-556, ENGINE FEED Knob, ENGINE FEED Knob, ,  OFF/NORM/AFT/FWD, (0.1, 0, 0.3)
 [158]  = "%.1f",   --PTR-CDCP-TMB-FMODE-158, FUEL QTY SEL Knob, FUEL QTY SEL Knob, ,  TEST(momentarily)/NORM/RSVR/INT WING/EXT WING/EXT CTR, (0.1, 0, 0.5)
-[556]  = "%.1f",   --PTR-FUELCP-TMB-ENGFEED-556, ENGINE FEED Knob, ENGINE FEED Knob, ,  OFF/NORM/AFT/FWD, (-0.1, 0, 0.3)
-[158]  = "%.1f",   --PTR-CDCP-TMB-FMODE-158, FUEL QTY SEL Knob, FUEL QTY SEL Knob, ,  TEST(momentarily)/NORM/RSVR/INT WING/EXT WING/EXT CTR, (-0.1, 0, 0.5)
    -- GEAR_INTERFACE(7)
 [362]  = "%1d",   --PTR-LGCP-ARM-LG-362, LG Handle, LG Handle, ,  UP/DN, (-1, 0, 1)
 [356]  = "%1d",   --PTR-LGCP-TMB-BRK-356, BRAKES Channel Switch, BRAKES Channel Switch, ,  CHAN 1/CHAN 2, (-1, 0, 1)
@@ -472,7 +470,7 @@ ExportScript.ConfigArguments =
 
 [401]  = "%1d",   --PTR-TWAP-BTN-PWR-401, RWR Indicator Control POWER Button, RWR Indicator Control POWER Button, , , (-1, 0, 1)
 [140]  = "%.1f",   --PTR-CMSC-LVR-BRT-140, RWR Intensity Knob - Rotate to adjust brightness, RWR Intensity Knob - Rotate to adjust brightness, , , (0, 0, 0.8)
-[404]  = "%1d",   --PTR-TWAP-LVR-DIM-404, RWR Indicator Control DIM Knob - Rotate to adjust brightness, RWR Indicator Control DIM Knob - Rotate to adjust brightness, , , (0, 0, 1)
+[404]  = "%.1f",   --PTR-TWAP-LVR-DIM-404, RWR Indicator Control DIM Knob - Rotate to adjust brightness, RWR Indicator Control DIM Knob - Rotate to adjust brightness, , , (0, 0, 1)
 [141]  = "%1d",   --PTR-CMSC-BTN-HNDOFF-141, RWR Indicator Control HANDOFF Button, RWR Indicator Control HANDOFF Button, , , (1, 0, 1)
 [143]  = "%1d",   --PTR-CMSC-BTN-LNCH-143, RWR Indicator Control LAUNCH Button, RWR Indicator Control LAUNCH Button, , , (1, 0, 1)
 [145]  = "%1d",   --PTR-CMSC-BTN-MODE-145, RWR Indicator Control MODE Button, RWR Indicator Control MODE Button, , , (1, 0, 1)
@@ -652,6 +650,78 @@ function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)
 		ExportScript.Tools.SendData("DEDL5I", string.format("%s", DEDLine5["inv"]):gsub(":", "!"))
 
 	end
+
+
+	local li = ExportScript.Tools.getListIndicatorValue(16) -- 6 for CMDS
+
+	if ExportScript.Config.Debug then
+		ExportScript.Tools.WriteToLog('CMDS: '..ExportScript.Tools.dump(li))
+	end
+
+	if li ~=nil then
+
+		ExportScript.Tools.SendData(2016, ExportScript.Tools.DisplayFormat(li.CMDS_O1_Amount, 4))
+		ExportScript.Tools.SendData(2017, ExportScript.Tools.DisplayFormat(li.CMDS_O2_Amount, 4))
+		ExportScript.Tools.SendData(2018, ExportScript.Tools.DisplayFormat(li.CMDS_CH_Amount, 4))
+		ExportScript.Tools.SendData(2019, ExportScript.Tools.DisplayFormat(li.CMDS_FL_Amount, 4))
+	end
+
+	--[[
+	CMDs ExportID
+	--return list_indication(16)
+		"-----------------------------------------\
+	CMDS_O1_Amount\
+	   0\
+	-----------------------------------------\
+	CMDS_O2_Amount\
+	   0\
+	-----------------------------------------\
+	CMDS_CH_Amount\
+	  60\
+	-----------------------------------------\
+	CMDS_FL_Amount\
+	  60\
+	"
+
+	indication(10) - UHF Preset DISPLAY
+	"-----------------------------------------\
+	txtPresetChannel\
+	**\
+	"
+
+	indication(11) - UHF FREQ DISPLAY
+	"-----------------------------------------\
+	txtDot\
+	.\
+	-----------------------------------------\
+	txtFreqStatus\
+	******\
+	"
+
+
+	indication(12) - UHF Peset Channel
+	"-----------------------------------------\
+	txtCh12\
+	305.000\
+	-----------------------------------------\
+	txtCh13\
+	259.000\
+	-----------------------------------------\
+	txtCh14\
+	265.000\
+	-----------------------------------------\
+	.....
+	.....
+	"
+
+	Engine RPM or other Guage
+
+	MainPanel = GetDevice(0)
+	return MainPanel:get_argument_value(95)
+	--Arg Number from Mainpanel_init.lua
+
+	]]--
+
 
 end
 

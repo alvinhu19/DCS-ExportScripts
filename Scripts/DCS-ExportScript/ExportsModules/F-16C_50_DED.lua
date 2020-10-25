@@ -610,7 +610,7 @@ function buildDEDLine(line)
 
 --Loop through Exported DED Objects
 	for k,v in pairs(DED_fields) do
--- Handle Duplicate Key Names on COM2 Guard page items        
+-- Handle Duplicate Key Names on COM2 Guard page items
 		if guard ~= nil then
 			label = guard.." "..k
 -- Handle Duplicate Key Names on IFF STAT page items
@@ -646,7 +646,7 @@ function buildDEDLine(line)
 			else
 				value = v  --Otherwise, use the output value.
 			end
-			
+
 -- Add Value to dataLine using mergeString because some values are are supposed to fit within others
 			dataLine = mergeString(dataLine, value, layout[1])
 
