@@ -56,6 +56,8 @@ function LuaExportStart()
 -- Works once just before mission start.
 -- (and before player selects their aircraft, if there is a choice!)
 
+	log.write("IKExport",log.INFO,"Ikarus Export start!")
+
 	-- 2) Setup udp sockets to talk to GlassCockpit
 	package.path  = package.path..";.\\LuaSocket\\?.lua"
 	package.cpath = package.cpath..";.\\LuaSocket\\?.dll"
