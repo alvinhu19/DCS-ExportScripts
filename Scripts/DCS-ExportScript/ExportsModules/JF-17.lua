@@ -444,10 +444,155 @@ ExportScript.ConfigArguments =
 	[978] = "%1d",   -- Eject Seat Emergency O2 Switch, OFF/ON {0,1}
 }
 function ExportScript.ProcessIkarusDCSConfigHighImportance(mainPanelDevice)
+
+
+
+
 end
 function ExportScript.ProcessDACConfigHighImportance(mainPanelDevice)
 end
+
+function processUFCLine(ufcLine, lineNum)
+
+	-- Empty Line "        "
+	--[[
+	txt_win4\
+	001  001\
+
+	txt_win1r\
+	FP-A  00\
+
+	txt_win2\
+	CAS AUTO\
+
+Input Status 1 - Single Line, cursor at left
+
+"-----------------------------------------\
+UFCP_base\
+\
+-----------------------------------------\
+txt_win2\
+----\
+children are {\
+-----------------------------------------\
+cur_win2\
+~\
+}\
+-----------------------------------------\
+txt_win2_fill\
+\
+"
+
+input status 2 - cursor at right
+"-----------------------------------------\
+UFCP_base\
+\
+-----------------------------------------\
+txt_win1r\
+6-\
+children are {\
+-----------------------------------------\
+cur_win1r\
+~\
+}\
+-----------------------------------------\
+txt_win1_fill\
+FP-A\
+"
+
+"-----------------------------------------\
+UFCP_base\
+\
+-----------------------------------------\
+txt_win3\
+ --:--T\
+children are {\
+}\
+"
+
+
+
+
+	]]--
+
+
+	local txt_win 		= ufcLine["txt_win"..lineNum]    	--
+	local txt_winr		= ufcLine["txt_win"..lineNum.."r"]  --
+
+	local txt_win_fill 	= ufcLine["txt_win"..lineNum.."_fill"]
+	local cur_win		= ufcLine["cur_win"..lineNum]
+	local cur_winr		= ufcLine["cur_win"..lineNum.."r"]
+	local UFCLineLength = 8
+	if txt_win_fill ~= null then
+		local full_txt_win_fill  = txt_win_fill..string.rep(" ",UFCLineLength - string.len(txt_win_fill))
+		if txt_win ~= null then
+			if cur_win ~= null then
+				processedUFCLine = string.sub(txt_win,1,string.len(txt_win) - string.len(cur_win))..cur_win..string.sub(full_txt_win_fill,string.len(txt_win) + 1)
+			else
+				processedUFCLine = txt_win..string.sub(full_txt_win_fill,string.len(txt_win) + 1)
+			end
+		else
+			if cur_winr ~= null then
+				processedUFCLine = string.sub(full_txt_win_fill,1,UFCLineLength - string.len(txt_winr))..string.sub(txt_winr,1,string.len(txt_winr) - string.len(cur_winr))..cur_winr
+			else
+				processedUFCLine = string.sub(full_txt_win_fill,1,UFCLineLength - string.len(txt_winr))..txt_winr
+			end
+		end
+	elseif txt_win ~= null then
+		processedUFCLine = txt_win
+	else
+		processedUFCLine = txt_winr
+	end
+	return processedUFCLine
+end
+
 function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)
+
+	-- 000.0`\  degree Sign
+	-- txt_win1r
+	-- txt_win1_fill
+	local ufcLcdLine1 = "        "
+	local ufcLcdLine2 = "        "
+	local ufcLcdLine3 = "        "
+	local ufcLcdLine4 = "        "
+
+	-- 3 / 4 / 5 / 6
+	local indLcd1 = ExportScript.Tools.getListIndicatorValue(3)
+	if indLcd1 then
+		ufcLcdLine1 = coerce_nil_to_string(processUFCLine(indLcd1,1))
+		ExportScript.Tools.SendData(2001, ufcLcdLine1)
+		ExportScript.Tools.SendData(2005, string.sub(ufcLcdLine1,1,4))
+		ExportScript.Tools.SendData(2006, string.sub(ufcLcdLine1,5,8))
+	end
+
+
+	local indLcd2 = ExportScript.Tools.getListIndicatorValue(4)
+	if indLcd2 then
+		ufcLcdLine2 = coerce_nil_to_string(processUFCLine(indLcd2,2))
+		ExportScript.Tools.SendData(2002, ufcLcdLine2)
+		ExportScript.Tools.SendData(2007, string.sub(ufcLcdLine2,1,4))
+		ExportScript.Tools.SendData(2008, string.sub(ufcLcdLine2,5,8))
+	end
+
+
+	local indLcd3 = ExportScript.Tools.getListIndicatorValue(5)
+	if indLcd3 then
+		ufcLcdLine3 = coerce_nil_to_string(processUFCLine(indLcd3,3))
+		ExportScript.Tools.SendData(2003, ufcLcdLine3)
+		ExportScript.Tools.SendData(2009, string.sub(ufcLcdLine3,1,4))
+		ExportScript.Tools.SendData(2010, string.sub(ufcLcdLine3,5,8))
+	end
+
+
+	local indLcd4 = ExportScript.Tools.getListIndicatorValue(6)
+	if indLcd4 then
+		ufcLcdLine4 = coerce_nil_to_string(processUFCLine(indLcd4,4))
+		ExportScript.Tools.SendData(2004, ufcLcdLine4)
+		ExportScript.Tools.SendData(2011, string.sub(ufcLcdLine4,1,4))
+		ExportScript.Tools.SendData(2012, string.sub(ufcLcdLine4,5,8))
+
+	end
+
 end
 function ExportScript.ProcessDACConfigLowImportance(mainPanelDevice)
 end
