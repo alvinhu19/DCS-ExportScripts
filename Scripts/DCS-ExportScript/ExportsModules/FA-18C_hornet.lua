@@ -498,7 +498,7 @@ ExportScript.ConfigArguments =
 	-- Targeting Pod, FLIR
 	[439] = "%.1f",    -- FLIR Switch, ON/STBY/OFF {0.0,0.5,1.0}
 	[441] = "%.1f",    -- LTD/R Switch, ARM/SAFE/AFT {0.0,0.5,1.0}
-
+	[442] = "%1d",    -- LST/NFLR Switch, ON/OFF
 }
 
 -----------------------------
